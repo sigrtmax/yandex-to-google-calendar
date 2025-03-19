@@ -1,0 +1,4 @@
+/.idea
+/.env
+/secrets/service-account-key.json
+/node_modules/

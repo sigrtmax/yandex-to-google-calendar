@@ -1,0 +1,17 @@
+{
+  "name": "calendar-sync",
+  "version": "1.0.0",
+  "main": "calendar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "googleapis": "^146.0.0",
+    "node-ical": "^0.20.1"
+  }
+}
