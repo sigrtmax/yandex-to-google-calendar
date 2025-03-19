@@ -79,5 +79,13 @@ async function importYandexEvents() {
     console.log(`Импорт завершён. Добавлено: ${added}, Пропущено (дубликаты): ${skipped}`);
 }
 
-// Запуск и обработка ошибок
-importYandexEvents().catch(console.error);
+
+// Выполняем импорт и ждём перезапуска от pm2
+async function run() {
+    await importYandexEvents().catch(err => console.error('Ошибка:', err.message));
+    console.log('Ожидание следующего запуска...');
+    // Бесконечное ожидание (pm2 перезапустит по cron)
+    setInterval(() => {}, 1000); // Держим процесс живым
+}
+
+run();
