@@ -66,5 +66,11 @@ GOOGLE_KEY_FILE - это путь к файлу, который можно ск�
 2. Собрать и запустить контейнер
 ```bash
 docker build -t yandex-to-google-calendar . 
-docker run yandex-to-google-calendar
+docker run -d --restart unless-stopped yandex-to-google-calendar
+```
+
+
+```bash
+docker save -o yandex-to-google-calendar.tar  docker.io/library/yandex-to-google-calendar
+docker load < yandex-to-google-calendar.tar
 ```
