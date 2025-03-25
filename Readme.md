@@ -65,6 +65,7 @@ docker run -d --restart unless-stopped yandex-to-google-calendar
 ```
 
 
+3. Если хочется запустить контейнер удаленно, можно сначала собрать его локально и затем загрузить из тарболла на сервере:
 ```bash
 docker save -o yandex-to-google-calendar.tar  docker.io/library/yandex-to-google-calendar
 docker load < yandex-to-google-calendar.tar
