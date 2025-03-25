@@ -33,18 +33,14 @@ async function importEventToGoogleCalendar(calendar, eventData) {
 
     try {
         const response = await calendar.events.import({
-            calendarId: calendarId, // Замени на твой calendarId
+            calendarId: calendarId,
             resource: event,
         });
 
 
         console.log(`Событие "${event.summary}" импортировано: ${response.data.htmlLink}`);
     } catch (error) {
-        if (error.code === 409) {
-            console.log(`Событие "${event.summary}" уже существует (iCalUID: ${event.iCalUID})`);
-        } else {
-            console.error(`Ошибка при импорте события "${event.summary}":`, error.message);
-        }
+        console.error(`Ошибка при импорте события "${event.summary}":`, error.message);
     }
 }
 
